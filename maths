@@ -1,0 +1,7 @@
+delta pixels                    delta perpendicular_len
+------------          =         ----------------------
+len_image / 2                   horizontal_len_visible
+
+delta pixels                    delta perpendicular_len
+------------          =         ----------------------
+len_image / 2             tan(FOV/2)*distance_from_viewer 
