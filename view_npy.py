@@ -4,13 +4,9 @@ import matplotlib.pyplot as plt
 import argparse
 
 parser = argparse.ArgumentParser(
-         description="terminal view a numpy file or image as np array")
-parser.add_argument(
-         "data",
-         help=".npy file to be viewed or im.")
-parser.add_argument(
-         "--img", action='store_true',
-         help="if an image.")
+    description="terminal view a numpy file or image as np array")
+parser.add_argument("data", help=".npy file to be viewed or im.")
+parser.add_argument("--img", action='store_true', help="if an image.")
 args = parser.parse_args()
 
 if args.img:
@@ -23,4 +19,5 @@ else:
         print(e)
         print('trying genfromtxt instead')
         data = np.genfromtxt(args.data)
-import ipdb; ipdb.set_trace()
+import ipdb
+ipdb.set_trace()

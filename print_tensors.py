@@ -17,9 +17,14 @@ def printTensorsPb(pb_file):
     for op in graph.get_operations():
         print(op.name)
         sys.stdout.flush()
+
+
 def printTensorsCkpt(ckpt_file):
     from tensorflow.python.tools.inspect_checkpoint import print_tensors_in_checkpoint_file
-    print_tensors_in_checkpoint_file(ckpt_file, all_tensors=True, tensor_name='')
+    print_tensors_in_checkpoint_file(ckpt_file,
+                                     all_tensors=True,
+                                     tensor_name='')
+
 
 if sys.argv[1][-3:] == '.pb':
     printTensorsPb(sys.argv[1])
@@ -27,4 +32,3 @@ elif sys.argv[1][-5:] == '.ckpt':
     printTensorsCkpt(sys.argv[1])
 else:
     print('needs to be a .pb or .ckpt file')
-
